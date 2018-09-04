@@ -3,11 +3,15 @@ import sys
 import os
 import argparse
 
-parser = argparse.ArgumentParser(description='Command to copy files')
-parser.add_argument('--source', dest='source', help='Source File', required=True)
-parser.add_argument('--destination', dest='destination', help='Destination File', required=True)
+# parser = argparse.ArgumentParser(description='Command to copy files')
+# parser.add_argument('--source', dest='source', help='Source File', required=True)
+# parser.add_argument('--destination', dest='destination', help='Destination File', required=True)
+# args = parser.parse_args()
+# print args
+
+parser = argparse.ArgumentParser(description="Command to copy files")
+parser.add_argument('files', nargs=2, help='Specify the source file name and destination file name separated by comma')
 args = parser.parse_args()
-print args
 
 # Fetch the script start time
 start_time = time.time()
@@ -21,8 +25,8 @@ try:
     # Fetch the source and destination passed from cli
     # source = sys.argv[1]
     # destination = sys.argv[2]
-    source = args.source
-    destination = args.destination
+    source = args.files[0]
+    destination = args.files[1]
 
     # Check if the user has specified current location as destination
     # If so, fetch the path to current location & file name from source
