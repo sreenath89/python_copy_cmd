@@ -1,23 +1,33 @@
 import time
 import sys
 import os
+import argparse
+
+parser = argparse.ArgumentParser(description='Command to copy files')
+parser.add_argument('--source', dest='source', help='Source File', required=True)
+parser.add_argument('--destination', dest='destination', help='Destination File', required=True)
+args = parser.parse_args()
+print args
 
 # Fetch the script start time
 start_time = time.time()
 
 try:
-    # Ensure that script name, source and destination are passed correctly.
-    if len(sys.argv) != 3:
-        raise Exception(
-            'ERROR: Arguments must be specified in correct order - <script to be run> <source> <destination>')
+    # # Ensure that script name, source and destination are passed correctly.
+    # if len(sys.argv) != 3:
+    #     raise Exception(
+    #         'ERROR: Arguments must be specified in correct order - <script to be run> <source> <destination>')
 
     # Fetch the source and destination passed from cli
-    source = sys.argv[1]
-    destination = sys.argv[2]
+    # source = sys.argv[1]
+    # destination = sys.argv[2]
+    source = args.source
+    destination = args.destination
 
     # Check if the user has specified current location as destination
     # If so, fetch the path to current location & file name from source
-    if sys.argv[2] == '.':
+    #if sys.argv[2] == '.':
+    if destination == '.':
         dest_path = os.getcwd()
         file_name = os.path.basename(source)
     else:
