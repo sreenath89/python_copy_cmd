@@ -57,9 +57,6 @@ def main():
         if not os.path.exists(source):
             raise Exception('ERROR: Source File doesnt exist!')
 
-        #print(source)
-        #print(destination)
-
         # Open the source file and copy the contents to destination file
         with open(source) as fs:
             with open(destination, 'w') as fd:
