@@ -6,7 +6,6 @@ with open('README.md') as fh:
 setuptools.setup(
     name='python-copy-command',
     version = '1.0.0',
-    packages = ['pcopy'],
     author = 'sreenath',
     author_email = 'zreenathmenon@gmail.com',
     description = 'Python Copy Command',

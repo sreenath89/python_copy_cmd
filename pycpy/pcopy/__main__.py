@@ -16,7 +16,6 @@ def main():
     parser = argparse.ArgumentParser(description="Command to copy files")
     parser.add_argument('files', nargs=2, help='Specify the source file name and destination file name separated by comma')
     args = parser.parse_args()
-    print args
 
     # Fetch the script start time
     start_time = time.time()
