@@ -1,6 +1,7 @@
 # Python Copy Command
 
-##Installation
+---
+## Installation
 1. Clone the repository
 ```
 git clone https://github.com/sreenathmmenon/python_copy_cmd
